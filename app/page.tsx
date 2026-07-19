@@ -1,5 +1,6 @@
 import Navbar from "../components/NavBar";
 import HeroSection from "../components/HeroSection";
+import MapSection from "../components/MapSection"; // 1. Import komponen baru
 import DescriptionSection from "../components/DescriptionSection";
 import StoryMapWrapper from "../components/StoryMapWrapper";
 import Footer from "../components/Footer";
@@ -17,6 +18,10 @@ export default function Home() {
 
       <Navbar />
       <HeroSection />
+      
+      {/* 2. Tambahkan komponen di bawah HeroSection */}
+      <MapSection /> 
+      
       <DescriptionSection />
       <section className="w-full h-dscreen md:h-screen block relative overflow-hidden flex flex-col">
         <StoryMapWrapper />

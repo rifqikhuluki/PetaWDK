@@ -155,16 +155,16 @@ export default function StoryMapSidecar() {
             let markerColors = "";
             if (isSelected) {
               markerColors =
-                spot.category === "wahana"
+                spot.category === "kuliner"
                   ? "bg-emerald-600 text-white ring-4 ring-emerald-500/40 z-50 scale-125"
-                  : spot.category === "caffe"
+                  : spot.category === "taman"
                     ? "bg-amber-600 text-white ring-4 ring-amber-500/40 z-50 scale-125"
                     : "bg-blue-600 text-white ring-4 ring-blue-500/40 z-50 scale-125";
             } else {
               markerColors =
-                spot.category === "wahana"
+                spot.category === "kuliner"
                   ? "bg-emerald-400 text-emerald-950 scale-100 z-10"
-                  : spot.category === "caffe"
+                  : spot.category === "taman"
                     ? "bg-amber-400 text-amber-950 scale-100 z-10"
                     : "bg-blue-400 text-blue-950 scale-100 z-10";
             }
@@ -243,25 +243,25 @@ export default function StoryMapSidecar() {
             </button>
 
             <button
-              onClick={() => setSelectedCategory("wahana")}
+              onClick={() => setSelectedCategory("kuliner")}
               className={`flex-1 py-2 rounded-xl transition-all ${
-                selectedCategory === "wahana"
+                selectedCategory === "kuliner"
                   ? "bg-emerald-600 text-white shadow-md shadow-emerald-600/10"
                   : "bg-emerald-50 text-emerald-700 hover:bg-emerald-100/70"
               }`}
             >
-              Wahana
+              Kuliner
             </button>
 
             <button
-              onClick={() => setSelectedCategory("caffe")}
+              onClick={() => setSelectedCategory("taman")}
               className={`flex-1 py-2 rounded-xl transition-all ${
-                selectedCategory === "caffe"
+                selectedCategory === "taman"
                   ? "bg-amber-600 text-white shadow-md shadow-amber-600/10"
                   : "bg-amber-50 text-amber-700 hover:bg-amber-100/70"
               }`}
             >
-              Caffe
+              Taman
             </button>
 
             <button
@@ -322,9 +322,9 @@ export default function StoryMapSidecar() {
                         <div className="flex items-center justify-between gap-2">
                           <span
                             className={`text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full ${
-                              spot.category === "wahana"
+                              spot.category === "kuliner"
                                 ? "bg-emerald-100 text-emerald-800"
-                                : spot.category === "caffe"
+                                : spot.category === "taman"
                                   ? "bg-amber-100 text-amber-800"
                                   : "bg-blue-100 text-blue-800"
                             }`}
