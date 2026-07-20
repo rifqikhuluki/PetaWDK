@@ -46,6 +46,15 @@ export default function Navbar() {
             {/* Logo 3: KKN */}
             <div className="w-8 h-8 md:w-12 md:h-12 rounded-full overflow-hidden bg-slate-50 flex items-center justify-center">
               <img
+                src="/Logo_WDK.png"
+                alt="Logo KKN"
+                className="w-full h-full object-contain"
+              />
+            </div>
+
+            {/* Logo 3: KKN */}
+            <div className="w-8 h-8 md:w-12 md:h-12 rounded-full overflow-hidden bg-slate-50 flex items-center justify-center">
+              <img
                 src="/Logo_UM_BBM.webp"
                 alt="Logo KKN"
                 className="w-full h-full object-contain"

@@ -22,6 +22,13 @@ export default function Footer() {
                 className="h-full w-full object-contain"
               />
             </div>
+            <div className="w-14 h-14 bg-slate-100 rounded-full  overflow-hidden flex items-center justify-center">
+              <img
+                src="/Logo_WDK.png"
+                alt="Logo Tulungrejo"
+                className="h-full w-full object-contain"
+              />
+            </div>
             <div className="w-14 h-14 bg-slate-100 rounded-full  overflow-hidden  flex items-center justify-center">
               <img
                 src="/Logo_UM_BBM.webp"

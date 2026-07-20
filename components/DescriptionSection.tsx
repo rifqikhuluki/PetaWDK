@@ -56,34 +56,24 @@ export default function DescriptionSection() {
         {/* KONTEN TEKS DESKRIPSI */}
         <div className="space-y-8">
           <h2 className="text-4xl md:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight text-center md:text-left">
-            Pesona Dunia Fantasi Negeri Jamur Mikutopia
+            Pesona Wisata Dusun Kuliner (WDK)
           </h2>
           <div className="text-slate-600 space-y-6 text-base md:text-lg font-light leading-relaxed text-justify md:text-left">
             <p>
               <strong className="font-semibold text-slate-800">
-                Mikutopia
+                Wisata Dusun Kuliner
               </strong>{" "}
-              merupakan sebuah objek wisata tematik unik bernuansa Negeri Jamur
-              yang terletak di kawasan sejuk Kota Batu. Mengusung konsep dunia
-              fantasi yang ajaib dan dipadukan dengan udara pegunungan yang
-              menyegarkan, destinasi ini menawarkan lanskap visual yang memukau
-              dan dirancang khusus untuk membawa pengunjung masuk ke dalam
-              petualangan dunia dongeng yang penuh warna.
+              Wisata Dusun Kuliner (WDK) adalah destinasi wisata keluarga di Kota Batu yang menggabungkan keindahan alam, kuliner lokal, dan pengalaman wisata seru dalam satu tempat.
+              Berlokasi di kawasan sejuk Bumiaji, WDK menghadirkan suasana taman yang asri dengan berbagai spot foto, area kuliner, hingga aktivitas wisata seperti Jeep Adventure, Petik Buah, dan Guest House yang nyaman untuk menginap.
             </p>
             <p>
-              Di dalam kawasan Mikutopia, pengunjung akan dimanjakan dengan
-              beragam spot foto menarik yang sangat estetis dan berbagai wahana
-              permainan seru. Seluruh wahana dan zona rekreasi di sini dirancang
-              secara inklusif, sehingga sangat ramah dan menyenangkan untuk
-              dinikmati oleh berbagai kalangan pengunjung, mulai dari anak-anak,
-              remaja, hingga dewasa.
+              Di kawasan ini, pengunjung akan dimanjakan dengan beragam pilihan kuliner lezat yang disajikan dalam nuansa tradisional yang menenangkan. Seluruh area kuliner, taman, dan zona rekreasi di sini dirancang secara inklusif, sehingga sangat ramah dan menyenangkan untuk dinikmati oleh berbagai kalangan pengunjung, mulai dari anak-anak, remaja, hingga dewasa.
             </p>
             <p>
               Melalui peta interaktif di bawah ini, Anda dapat menjelajahi
-              seluruh sudut Negeri Jamur dengan sangat mudah. Peta ini akan
-              memandu Anda menemukan berbagai wahana serta fasilitas umum
-              penunjang kenyamanan di seluruh area Mikutopia, mulai dari
-              mushola, toilet, foodcourt.
+              seluruh sudut Wisata Dusun Kuliner dengan sangat mudah. Peta ini akan
+              memandu Anda menemukan berbagai titik wahana, taman, spot kuliner, serta fasilitas umum
+              penunjang kenyamanan Anda, mulai dari mushola, toilet, hingga area parkir.
             </p>
           </div>
         </div>
