@@ -1,6 +1,6 @@
 import Navbar from "../components/NavBar";
 import HeroSection from "../components/HeroSection";
-import MapSection from "../components/MapSection";
+import MapSection from "../components/MapSection"; // 1. Import komponen baru
 import DescriptionSection from "../components/DescriptionSection";
 import StoryMapWrapper from "../components/StoryMapWrapper";
 import Footer from "../components/Footer";
@@ -8,9 +8,6 @@ import Footer from "../components/Footer";
 export default function Home() {
   return (
     <main className="min-h-screen w-full bg-slate-50 font-sans text-slate-900 selection:bg-emerald-500 selection:text-white">
-      {/* Ubah Logo pada Tab (Favicon) */}
-      <link rel="icon" type="image/png" href="/Logo_WDK.png" />
-
       {/* Import CSS Leaflet */}
       <link
         rel="stylesheet"
