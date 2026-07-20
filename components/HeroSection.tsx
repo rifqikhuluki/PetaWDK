@@ -19,7 +19,7 @@ export default function HeroSection() {
           Wisata Dusun Kuliner
         </h1>
         <p className="text-lg md:text-2xl font-light text-slate-200 drop-shadow max-w-2xl mx-auto">
-          Kawasan Destinasi Wisata Wisata Dusun Kuliner
+          Kawasan Destinasi Wisata Dusun Kuliner
         </p>
 
         <div className="pt-4 border-t border-white/20 max-w-xl mx-auto">
