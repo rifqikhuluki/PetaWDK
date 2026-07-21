@@ -24,7 +24,7 @@ export default function Footer() {
             </div>
             <div className="w-14 h-14 bg-slate-100 rounded-full  overflow-hidden flex items-center justify-center">
               <img
-                src="/Logo_WDK.png"
+                src="/Logo_WDK.webp"
                 alt="Logo Tulungrejo"
                 className="h-full w-full object-contain"
               />

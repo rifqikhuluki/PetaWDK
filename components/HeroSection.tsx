@@ -14,7 +14,7 @@ export default function HeroSection() {
       {/* Teks Konten Banner */}
       <div className="relative z-10 max-w-4xl mx-auto space-y-6 text-white px-4">
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-md">
-          Peta Wisata 
+          Peta Digital 
           <br />
           Wisata Dusun Kuliner
         </h1>

@@ -21,10 +21,10 @@ export const spotsData: Spot[] = [
     description:
       "Area parkir yang luas, aman, dan tertata rapi khusus untuk kendaraan roda empat milik pengunjung.",
     coordinates: [-7.795493188377042, 112.52219678812925],
-    gmapsUrl: "https://maps.app.goo.gl/bKxJBtrym43jegBF7",
+    gmapsUrl: "https://maps.app.goo.gl/D77oX5s8CxHXdt5L9",
     category: "fasilitas",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/fasilitas/parkirMobil.webp", "/fasilitas/parkirMobil1.webp", "/fasilitas/parkirMobil2.webp"],
   },
   {
     id: "2",
@@ -32,10 +32,10 @@ export const spotsData: Spot[] = [
     description:
       "Lahan parkir khusus berkapasitas besar yang dirancang untuk menampung armada bus pariwisata rombongan.",
     coordinates: [-7.794927352142544, 112.5223623773322],
-    gmapsUrl: "https://maps.app.goo.gl/RhDhZXw5EtzYPEFq7",
+    gmapsUrl: "https://maps.app.goo.gl/Qc7NBPoZwubXhibB9",
     category: "fasilitas",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/fasilitas/parkirBus.webp"],
   },
   {
     id: "3",
@@ -43,10 +43,10 @@ export const spotsData: Spot[] = [
     description:
       "Area parkir khusus kendaraan roda dua yang aman dan strategis dekat dengan pintu masuk.",
     coordinates: [-7.795302344288769, 112.52207513075567],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/UTMYBsyNJB1nkGsR9",
     category: "fasilitas",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/fasilitas/parkirMotor.webp"],
   },
   {
     id: "4",
@@ -54,7 +54,7 @@ export const spotsData: Spot[] = [
     description:
       "Pusat pembelian tiket masuk resmi, penukaran reservasi, dan tempat mendapatkan informasi awal wisata.",
     coordinates: [-7.795683933460461, 112.52232036076474],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/1AcYub1Ui7YyY2x88",
     category: "fasilitas",
     zoom: 21,
     images: ["/wahana/crispa.webp"],
@@ -65,7 +65,7 @@ export const spotsData: Spot[] = [
     description:
       "Layanan penyewaan dan titik keberangkatan armada Jeep untuk menikmati petualangan seru menyusuri rute wisata.",
     coordinates: [-7.795707608382016, 112.52212799985682],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/VcyC4qCT8GqUUdQc6",
     category: "fasilitas",
     zoom: 21,
     images: ["/wahana/crispa.webp"],
@@ -76,10 +76,10 @@ export const spotsData: Spot[] = [
     description:
       "Area bermain luar ruangan yang ramah anak, dilengkapi dengan aneka wahana permainan yang aman dan seru.",
     coordinates: [-7.795707608382016, 112.52212799985689], //null
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/17xHYVzrvfMnExsV7",
     category: "fasilitas",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/fasilitas/playground.webp"],
   },
   {
     id: "7",
@@ -87,10 +87,10 @@ export const spotsData: Spot[] = [
     description:
       "Kantor layanan khusus untuk informasi, pendaftaran kegiatan kelompok, dan pemesanan fasilitas wisata.",
     coordinates: [-7.795529893510635, 112.52242822531653],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/VSkUqazhesTatJ2Q6",
     category: "fasilitas",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/fasilitas/omahReservasi.webp", "/fasilitas/omahReservasi1.webp"],
   },
   {
     id: "8",
@@ -98,7 +98,7 @@ export const spotsData: Spot[] = [
     description:
       "Pusat rekreasi keluarga yang menyediakan berbagai pilihan permainan tradisional dan edukatif yang interaktif.",
     coordinates: [-7.7962290009281725, 112.522160997951],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/KNCk6MWK1m4DApMW6",
     category: "fasilitas",
     zoom: 21,
     images: ["/fasilitas/omahDolanan.webp"],
@@ -109,7 +109,7 @@ export const spotsData: Spot[] = [
     description:
       "Halaman terbuka yang sangat luas, ideal untuk titik kumpul utama, acara komunitas, atau aktivitas outbound.",
     coordinates: [-7.796689324292636, 112.52205727585151],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/b3Hapgyjczv4dH6a8",
     category: "fasilitas",
     zoom: 21,
     images: ["/fasilitas/latarOmbo.webp"],
@@ -120,7 +120,7 @@ export const spotsData: Spot[] = [
     description:
       "Fasilitas panggung permanen untuk menggelar pertunjukan live music, pentas seni, dan hiburan berkala.",
     coordinates: [-7.796871395551559, 112.52199115790305],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/uhRsVXNwfbYhqtULA",
     category: "fasilitas",
     zoom: 21,
     images: ["/fasilitas/panggung.webp"],
@@ -131,7 +131,7 @@ export const spotsData: Spot[] = [
     description:
       "Gelanggang teater terbuka bergaya tribun berundak untuk menyaksikan pementasan seni dan budaya dengan nyaman.",
     coordinates: [-7.796274248372732, 112.52147394588145],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/n2wH7wbXoBpkiBpF8",
     category: "fasilitas",
     zoom: 21,
     images: ["/fasilitas/amphitheater.webp"],
@@ -142,7 +142,7 @@ export const spotsData: Spot[] = [
     description:
       "Fasilitas penginapan dengan suasana asri dan nyaman untuk pengunjung yang ingin bermalam bersama keluarga.",
     coordinates: [-7.795984258502745, 112.52145831652192],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/K5Vai3RDVLPc5Ykz5",
     category: "fasilitas",
     zoom: 21,
     images: ["/fasilitas/guestHouse.webp", "/fasilitas/guestHouse1.webp", "/fasilitas/guestHouse2.webp", "/fasilitas/guestHouse3.webp", "/fasilitas/guestHouse4.webp", "/fasilitas/guestHouse5.webp"],
@@ -153,7 +153,7 @@ export const spotsData: Spot[] = [
     description:
       "Area parkir kendaraan khusus yang disediakan dekat dengan lokasi penginapan demi kenyamanan tamu bermalam.",
     coordinates: [-7.79633598744321, 112.52195497459879], //null
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/73xJbp9rfA9VpYYy5",
     category: "fasilitas",
     zoom: 21,
     images: ["/wahana/crispa.webp"],
@@ -178,7 +178,7 @@ export const spotsData: Spot[] = [
     gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
     category: "fasilitas",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/fasilitas/kioskBunga.webp", "/fasilitas/kioskBunga1.webp"],
   },
   {
     id: "16",
@@ -186,10 +186,10 @@ export const spotsData: Spot[] = [
     description:
       "Kedai makan yang menyajikan hidangan soto berkuah hangat dan gurih dengan bumbu rempah pilihan, sangat pas dinikmati di cuaca sejuk.",
     coordinates: [-7.795485862472751, 112.52199398222814],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/97vPPsUHR7Haqczj6",
     category: "kuliner",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/kuliner/warungSoto.webp", "/kuliner/warungSoto1.webp"],
   },
   {
     id: "17",
@@ -197,10 +197,10 @@ export const spotsData: Spot[] = [
     description:
       "Pusat belanja hasil bumi yang menawarkan berbagai macam buah-buahan dan sayuran segar langsung dari petani lokal untuk oleh-oleh.",
     coordinates: [-7.795669927288336, 112.52204840644517],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/558GKgRys4BGdmQj8",
     category: "kuliner",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/kuliner/pasarBuah&Sayur.webp", "/kuliner/pasarBuah&Sayur1.webp", "/kuliner/pasarBuah&Sayur2.webp"],
   },
   {
     id: "18",
@@ -208,10 +208,10 @@ export const spotsData: Spot[] = [
     description:
       "Paviliun kuliner berkonsep tradisional yang menyajikan hidangan lokal otentik dengan suasana santai dan nyaman layaknya di rumah sendiri.",
     coordinates: [-7.7960020359739355, 112.52214305790386],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/7q5eY8X4qp8L63uv9",
     category: "kuliner",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/kuliner/omahKawi.webp", "/kuliner/omahKawi1.webp"],
   },
   {
     id: "19",
@@ -219,10 +219,10 @@ export const spotsData: Spot[] = [
     description:
       "Tempat bersantap berdesain klasik bernuansa kayu yang menawarkan aneka menu masakan nusantara dengan suasana pedesaan yang tenang.",
     coordinates: [-7.795974188319111, 112.52198890746898],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/rR3o894g2cSdrPKS7",
     category: "kuliner",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/kuliner/omahPanderman.webp", "/kuliner/omahPanderman1.webp", "/kuliner/omahPanderman2.webp", "/kuliner/omahPanderman3.webp", "/kuliner/omahPanderman4.webp", "/kuliner/omahPanderman5.webp"],
   },
   {
     id: "20",
@@ -230,10 +230,10 @@ export const spotsData: Spot[] = [
     description:
       "Area makan tradisional yang luas, cocok untuk rombongan keluarga yang ingin menikmati sajian kuliner khas dengan porsi besar yang menggugah selera.",
     coordinates: [-7.795943351516698, 112.52194498641136],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/7Ec73BQ94vQ4cxjb7",
     category: "kuliner",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/kuliner/omahSemeru1.webp", "/kuliner/omahSemeru2.webp"],
   },
   {
     id: "21",
@@ -241,10 +241,10 @@ export const spotsData: Spot[] = [
     description:
       "Kafe bergaya modern yang menyajikan aneka kopi, minuman kekinian, dan makanan ringan, menjadikannya spot nongkrong favorit anak muda.",
     coordinates: [-7.796042940550561, 112.52245263642881],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/Yok5BuZKbA6nJfZX9",
     category: "kuliner",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/kuliner/bleztroCafe1.webp", "/kuliner/bleztroCafe2.webp", "/kuliner/bleztroCafe3.webp"],
   },
   {
     id: "22",
@@ -252,10 +252,10 @@ export const spotsData: Spot[] = [
     description:
       "Restoran berkonsep dapur tradisional (pawon) yang menghidangkan menu-menu rumahan khas Nusantara dengan cita rasa otentik yang kaya rempah.",
     coordinates: [-7.796153520149111, 112.522588313191],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/12r8kCdGXDDUjUdm9",
     category: "kuliner",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/kuliner/sapawon.webp", "/kuliner/sapawon1.webp"],
   },
   {
     id: "23",
@@ -263,10 +263,10 @@ export const spotsData: Spot[] = [
     description:
       "Spot kuliner yang asri dan estetik, menawarkan pengalaman bersantap menu khas daerah sembari menikmati angin sejuk dan pemandangan sekitar.",
     coordinates: [-7.7961190907714615, 112.5213665256535],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/Y2esB8nFKMyetmx3A",
     category: "kuliner",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/kuliner/omahArjuna.webp", "/kuliner/omahArjuna1.webp", "/kuliner/omahArjuna2.webp", "/kuliner/omahArjuna3.webp"],
   },
   {
     id: "24",
@@ -274,10 +274,10 @@ export const spotsData: Spot[] = [
     description:
       "Pendopo makan yang nyaman dengan kapasitas memadai, menyajikan hidangan lezat dan hangat yang sangat pas dinikmati setelah lelah berkeliling.",
     coordinates: [-7.796258352260067, 112.52131962243656],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/cSffJ5Eex7nassKh8",
     category: "kuliner",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/kuliner/omahWelirang.webp", "/kuliner/omahWelirang1.webp", "/kuliner/omahWelirang2.webp", "/kuliner/omahWelirang3.webp", "/kuliner/omahWelirang4.webp"],
   },
   {
     id: "25",
@@ -285,10 +285,10 @@ export const spotsData: Spot[] = [
     description:
       "Sentra jajanan kaki lima yang menghadirkan beragam camilan manis, gurih, dan minuman segar yang praktis dinikmati sambil jalan-jalan.",
     coordinates: [-7.796434582738692, 112.52203935350929],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/vVayQa7GfEpSe5fW7",
     category: "kuliner",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/kuliner/streetFood.webp", "/kuliner/streetFood1.webp", "/kuliner/streetFood2.webp", "/kuliner/streetFood3.webp", "/kuliner/streetFood4.webp"],
   },
   {
     id: "26",
@@ -296,10 +296,10 @@ export const spotsData: Spot[] = [
     description:
       "Kawasan rindang bernuansa hutan tropis yang menyejukkan, menawarkan udara segar dan suasana alam yang tenang untuk berjalan-jalan.",
     coordinates: [-7.79627827103794, 112.52199902096999],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/d8dehxyzHquRRbnR9",
     category: "taman",
     zoom: 21,
-    images: ["/taman/alasTropis.webp", "/taman/alasTropis.webp1", "/taman/alasTropis2.webp", "/taman/alasTropis3.webp", "/taman/alasTropis4.webp"],
+    images: ["/taman/alasTropis.webp", "/taman/alasTropis1.webp", "/taman/alasTropis3.webp", "/taman/alasTropis4.webp"],
   },
   {
     id: "27",
@@ -307,7 +307,7 @@ export const spotsData: Spot[] = [
     description:
       "Taman asri yang dipadukan dengan bangunan tradisional berarsitektur Joglo, sangat cocok untuk bersantai sambil menikmati nuansa klasik Jawa.",
     coordinates: [-7.7961712845051565, 112.52244374724202],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/wkpXoQZSSx9R5d4s6",
     category: "taman",
     zoom: 21,
     images: ["/taman/wonoJoglo.webp"],
@@ -318,7 +318,7 @@ export const spotsData: Spot[] = [
     description:
       "Area taman tematik estetik yang dihiasi dengan rumah-rumah miniatur dan ornamen kurcaci yang sangat digemari anak-anak sebagai spot berfoto.",
     coordinates: [-7.796201047066092, 112.52149099608967],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/zi26AB6Hw6cnqNmy5",
     category: "taman",
     zoom: 21,
     images: ["/taman/tamanKurcaci.webp", "/taman/tamanKurcari1.webp"],
@@ -329,7 +329,7 @@ export const spotsData: Spot[] = [
     description:
       "Ruang terbuka hijau yang inspiratif, didedikasikan bagi pengunjung dan anak-anak untuk mengekspresikan kreativitas seni melalui aktivitas melukis.",
     coordinates: [-7.796730148052206, 112.52219794006936],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/djfkG28Hg1rWEgxt5",
     category: "taman",
     zoom: 21,
     images: ["/taman/tamanLukis.webp"],
@@ -340,7 +340,7 @@ export const spotsData: Spot[] = [
     description:
       "Taman wisata edukasi dan interaktif di mana pengunjung dapat bermain, berinteraksi, serta memberi makan kelinci-kelinci lucu secara langsung.",
     coordinates: [-7.796850492045255, 112.52225237812326],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/7kWLeeHMbxE8cHc57",
     category: "taman",
     zoom: 21,
     images: ["/taman/tamanKelinci.webp", "/taman/tamanKelinci1.webp"],
@@ -351,7 +351,7 @@ export const spotsData: Spot[] = [
     description:
       "Hamparan taman bunga yang menyuguhkan keindahan pesona warna-warni bunga hortensia (panca warna), menciptakan lanskap yang memanjakan mata.",
     coordinates: [-7.79672304173261, 112.5213199514238],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/pUVTqPEPHwAbKAZd6",
     category: "taman",
     zoom: 21,
     images: ["/taman/tamanHortnesia.webp", "/taman/tamanHortnesia1.webp", "/taman/tamanHortnesia2.webp"],
@@ -362,7 +362,7 @@ export const spotsData: Spot[] = [
     description:
       "Taman botani edukatif yang menanam aneka ragam rempah dan tanaman bumbu dapur, memberikan wawasan langsung tentang kekayaan flora Nusantara.",
     coordinates: [-7.796410596443097, 112.52179157676993],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/4yLdxjK1jtQeLmV48",
     category: "taman",
     zoom: 21,
     images: ["/taman/bumbuDapur.webp", "/taman/bumbuDapur1.webp", "/taman/bumbuDapur2.webp", "/taman/bumbuDapur3.webp"],
@@ -373,7 +373,7 @@ export const spotsData: Spot[] = [
     description:
       "Spot alam berupa miniatur air terjun (coban) yang mengalir di tengah rimbunnya pepohonan, menghadirkan suara gemercik air yang menenangkan jiwa.",
     coordinates: [-7.796350682442884, 112.52123093858569],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/i3qsCm69TZPuDHmCA",
     category: "taman",
     zoom: 21,
     images: ["/taman/cobanAlas.webp", "/taman/cobanAlas1.webp", "/taman/cobanAlas2.webp"],
@@ -384,9 +384,9 @@ export const spotsData: Spot[] = [
     description:
       "Fasilitas pameran edukatif skala kecil di area taman yang menampilkan benda-benda informatif dan bersejarah, dirancang khusus untuk wawasan anak-anak.",
     coordinates: [-7.79547070617909, 112.5225023021879],
-    gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
+    gmapsUrl: "https://maps.app.goo.gl/4mTB8NLtdPt3DKts8",
     category: "taman",
     zoom: 21,
-    images: ["/wahana/crispa.webp"],
+    images: ["/taman/museumCilik.webp", "/taman/museumCilik1.webp", "/taman/museumCilik2.webp"],
   }
 ];
