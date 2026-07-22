@@ -16,7 +16,7 @@ export default function HeroSection() {
         <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight leading-tight drop-shadow-md">
           Peta Digital 
           <br />
-          Wisata Dusun Kuliner udah diganti
+          Wisata Dusun Kuliner
         </h1>
         <p className="text-lg md:text-2xl font-light text-slate-200 drop-shadow max-w-2xl mx-auto">
           Kawasan Destinasi Wisata Dusun Kuliner
