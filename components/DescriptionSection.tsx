@@ -79,9 +79,8 @@ export default function DescriptionSection() {
         </div>
 
         {/* CAROUSEL */}
-        <div className="space-y-6">
+        {/* <div className="space-y-6">
           <div className="relative w-full flex items-center">
-            {/* Jendela Utama Menahan Card */}
             <div
               className="overflow-hidden w-full p-2"
               onMouseEnter={() => {
@@ -104,17 +103,13 @@ export default function DescriptionSection() {
                   >
                     <div className="bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-md transition-shadow duration-300 p-1">
                       <div className="relative aspect-[4/3] bg-slate-100 rounded-xl overflow-hidden group/item">
-                        {/* FOTO UTAMA */}
                         <img
                           src={img.src}
                           alt={img.name}
                           className="w-full h-full object-cover pointer-events-none transition-transform duration-500 group-hover/item:scale-105"
                         />
-
-                        {/* LAPISAN GRADASI GELAP DI BAGIAN BAWAH FOTO */}
                         <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-black/80 via-black/40 to-transparent pointer-events-none" />
 
-                        {/* TEKS NAMA SPOT DI ATAS GRADASI */}
                         <div className="absolute bottom-0 inset-x-0 p-4 z-10">
                           <p className="text-sm md:text-base font-bold text-white tracking-wide drop-shadow-sm">
                             {img.name}
@@ -127,7 +122,6 @@ export default function DescriptionSection() {
               </div>
             </div>
 
-            {/* Tombol Panah Kiri */}
             <button
               onClick={prevCarousel}
               className="absolute -left-4 md:-left-6 z-20 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-600 hover:text-emerald-600 active:scale-90 transition-all"
@@ -148,7 +142,6 @@ export default function DescriptionSection() {
               </svg>
             </button>
 
-            {/* Tombol Panah Kanan */}
             <button
               onClick={nextCarousel}
               className="absolute -right-4 md:-right-6 z-20 w-10 h-10 rounded-full bg-white border border-slate-200 shadow-md flex items-center justify-center text-slate-600 hover:text-emerald-600 active:scale-90 transition-all"
@@ -170,7 +163,6 @@ export default function DescriptionSection() {
             </button>
           </div>
 
-          {/* Indikator Titik Bulat Bawah */}
           <div className="flex justify-center gap-2 pt-2">
             <button
               onClick={() => setCurrentIndex(0)}
@@ -183,7 +175,7 @@ export default function DescriptionSection() {
               aria-label="Ke halaman akhir"
             />
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );
