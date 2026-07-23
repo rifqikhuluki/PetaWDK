@@ -321,7 +321,7 @@ export const spotsData: Spot[] = [
     gmapsUrl: "https://maps.app.goo.gl/zi26AB6Hw6cnqNmy5",
     category: "taman",
     zoom: 21,
-    images: ["/taman/tamanKurcaci.webp", "/taman/tamanKurcari1.webp"],
+    images: ["/taman/tamanKurcaci.webp", "/taman/tamanKurcaci1.webp"],
   },
   {
     id: "29",

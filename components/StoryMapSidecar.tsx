@@ -41,10 +41,17 @@ export default function StoryMapSidecar() {
   }, [searchQuery, selectedCategory]);
 
   const [activeSpot, setActiveSpot] = useState<Spot>(spotsData[0]);
-  const [customIcon, setCustomIcon] = useState<any>(null);
+  
+  // FIX 1: Save the actual Leaflet library into state instead of an unused customIcon
+  const [L, setL] = useState<typeof import("leaflet") | null>(null);
+  
   const cardRefs = useRef<HTMLDivElement[]>([]);
   const sidebarRef = useRef<HTMLDivElement>(null);
   const isClickScrolling = useRef<boolean>(false);
+
+  const activeIndex = useMemo(() => {
+    return filteredSpots.findIndex((s) => s.id === activeSpot?.id);
+  }, [filteredSpots, activeSpot]);
 
   useEffect(() => {
     if (filteredSpots.length > 0) {
@@ -52,14 +59,10 @@ export default function StoryMapSidecar() {
     }
   }, [filteredSpots]);
 
+  // FIX 2: Dynamically import Leaflet safely on the client
   useEffect(() => {
-    import("leaflet").then((L) => {
-      const icon = L.divIcon({
-        className: "custom-marker",
-        iconSize: [36, 36],
-        iconAnchor: [18, 18],
-      });
-      setCustomIcon(icon);
+    import("leaflet").then((leafletModule) => {
+      setL(leafletModule.default || leafletModule);
     });
   }, []);
 
@@ -124,87 +127,91 @@ export default function StoryMapSidecar() {
   return (
     <div className="relative w-full h-full bg-slate-100 overflow-hidden flex flex-col md:flex-row">
       {/* Container Peta */}
-      <div className="relative md:absolute top-0 left-0 w-full h-[25vh] md:h-full z-10">
-        <MapContainer
-          center={activeSpot?.coordinates || [0, 0]}
-          zoom={activeSpot?.zoom || 13}
-          className="w-full h-full"
-          zoomControl={false}
-          scrollWheelZoom={false}
-          maxZoom={21}
-          minZoom={3}
-        >
-          <TileLayer
-            attribution='&copy; <a href="https://carto.com/">CartoDB</a>'
-            url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+      <div className="relative md:absolute top-0 left-0 w-full h-[25vh] md:h-full z-10 bg-slate-200">
+        {/* FIX 3: Wait for Leaflet (L) to load before mounting MapContainer to avoid race conditions */}
+        {L ? (
+          <MapContainer
+            center={activeSpot?.coordinates || [0, 0]}
+            zoom={activeSpot?.zoom || 13}
+            className="w-full h-full"
+            zoomControl={false}
+            scrollWheelZoom={false}
             maxZoom={21}
-            maxNativeZoom={18}
-          />
-
-          {activeSpot && (
-            <MapController
-              center={activeSpot.coordinates}
-              zoom={activeSpot.zoom}
+            minZoom={3}
+          >
+            <TileLayer
+              attribution='&copy; <a href="https://carto.com/">CartoDB</a>'
+              url="https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png"
+              maxZoom={21}
+              maxNativeZoom={18}
             />
-          )}
 
-          {/* Menggunakan spotsData (Data Asli): Semua titik di peta akan selalu muncul */}
-          {spotsData.map((spot, idx) => {
-            const isSelected = activeSpot?.id === spot.id;
+            {activeSpot && (
+              <MapController
+                center={activeSpot.coordinates}
+                zoom={activeSpot.zoom}
+              />
+            )}
 
-            let markerColors = "";
-            if (isSelected) {
-              markerColors =
-                spot.category === "kuliner"
-                  ? "bg-emerald-600 text-white ring-4 ring-emerald-500/40 z-50 scale-125"
-                  : spot.category === "taman"
-                    ? "bg-amber-600 text-white ring-4 ring-amber-500/40 z-50 scale-125"
-                    : "bg-blue-600 text-white ring-4 ring-blue-500/40 z-50 scale-125";
-            } else {
-              markerColors =
-                spot.category === "kuliner"
-                  ? "bg-emerald-400 text-emerald-950 scale-100 z-10"
-                  : spot.category === "taman"
-                    ? "bg-amber-400 text-amber-950 scale-100 z-10"
-                    : "bg-blue-400 text-blue-950 scale-100 z-10";
-            }
+            {spotsData.map((spot, idx) => {
+              const isSelected = activeSpot?.id === spot.id;
 
-            return (
-              <Marker
-                key={spot.id}
-                position={spot.coordinates}
-                eventHandlers={{
-                  click: () => handleMarkerClick(spot),
-                }}
-                icon={
-                  typeof window !== "undefined" && window.L
-                    ? window.L.divIcon({
-                        className: "custom-marker",
-                        html: `<div class="w-9 h-9 rounded-full border-4 border-white flex items-center justify-center font-black text-xs shadow-xl transition-all duration-500 ${markerColors}">
-          ${idx + 1}
-        </div>`,
-                        iconSize: [36, 36],
-                        iconAnchor: [18, 18],
-                      })
-                    : undefined
-                }
-              >
-                <Popup>
-                  <div className="text-xs font-bold text-slate-900">
-                    {spot.name}
-                  </div>
-                </Popup>
-              </Marker>
-            );
-          })}
-        </MapContainer>
+              let markerColors = "";
+              if (isSelected) {
+                markerColors =
+                  spot.category === "kuliner"
+                    ? "bg-emerald-600 text-white ring-4 ring-emerald-500/40 z-50 scale-125"
+                    : spot.category === "taman"
+                      ? "bg-amber-600 text-white ring-4 ring-amber-500/40 z-50 scale-125"
+                      : "bg-blue-600 text-white ring-4 ring-blue-500/40 z-50 scale-125";
+              } else {
+                markerColors =
+                  spot.category === "kuliner"
+                    ? "bg-emerald-400 text-emerald-950 scale-100 z-10"
+                    : spot.category === "taman"
+                      ? "bg-amber-400 text-amber-950 scale-100 z-10"
+                      : "bg-blue-400 text-blue-950 scale-100 z-10";
+              }
+
+              return (
+                <Marker
+                  key={spot.id}
+                  position={spot.coordinates}
+                  eventHandlers={{
+                    click: () => handleMarkerClick(spot),
+                  }}
+                  // FIX 4: Use the safely imported L instance instead of window.L
+                  icon={L.divIcon({
+                    className: "custom-marker",
+                    html: `<div class="w-9 h-9 rounded-full border-4 border-white flex items-center justify-center font-black text-xs shadow-xl transition-all duration-500 ${markerColors}">
+                             ${idx + 1}
+                           </div>`,
+                    iconSize: [36, 36],
+                    iconAnchor: [18, 18],
+                  })}
+                >
+                  <Popup>
+                    <div className="text-xs font-bold text-slate-900">
+                      {spot.name}
+                    </div>
+                  </Popup>
+                </Marker>
+              );
+            })}
+          </MapContainer>
+        ) : (
+          /* Fallback loading state while leaflet is initializing */
+          <div className="w-full h-full flex items-center justify-center text-slate-400 text-sm animate-pulse">
+            Memuat Peta...
+          </div>
+        )}
       </div>
 
       {/* Container Sidecar / Sidebar */}
       <div className="relative md:absolute inset-x-0 bottom-0 md:inset-y-0 md:left-0 w-full md:w-[430px] lg:w-[460px] h-[60vh] md:h-full z-30 bg-slate-50/95 md:bg-transparent flex flex-col pointer-events-auto shadow-2xl md:shadow-none">
-        {/* PANEL INPUT: Sticky Search & Filter di Atas Sidebar */}
+        
+        {/* PANEL INPUT - No changes required here */}
         <div className="p-4 bg-white/95 backdrop-blur border-b border-slate-200 shadow-sm md:mt-4 md:mx-4 md:rounded-2xl md:border z-40 space-y-3 flex-shrink-0">
-          {/* Input Search */}
           <div className="relative">
             <input
               type="text"
@@ -229,7 +236,6 @@ export default function StoryMapSidecar() {
             </svg>
           </div>
 
-          {/* Tombol Filter Kategori */}
           <div className="flex gap-1.5 text-xs font-bold">
             <button
               onClick={() => setSelectedCategory("all")}
@@ -241,7 +247,6 @@ export default function StoryMapSidecar() {
             >
               Semua
             </button>
-
             <button
               onClick={() => setSelectedCategory("kuliner")}
               className={`flex-1 py-2 rounded-xl transition-all ${
@@ -252,7 +257,6 @@ export default function StoryMapSidecar() {
             >
               Kuliner
             </button>
-
             <button
               onClick={() => setSelectedCategory("taman")}
               className={`flex-1 py-2 rounded-xl transition-all ${
@@ -263,7 +267,6 @@ export default function StoryMapSidecar() {
             >
               Taman
             </button>
-
             <button
               onClick={() => setSelectedCategory("fasilitas")}
               className={`flex-1 py-2 rounded-xl transition-all ${
@@ -296,6 +299,8 @@ export default function StoryMapSidecar() {
                 (s) => s.id === spot.id,
               );
 
+              const isCardNearActive = Math.abs(index - activeIndex) <= 5;
+
               return (
                 <div
                   key={spot.id}
@@ -309,13 +314,20 @@ export default function StoryMapSidecar() {
                       : "opacity-40 md:opacity-30 scale-95"
                   }`}
                 >
-                  {/* Box Kartu Putih */}
                   <div className="bg-white rounded-2xl border border-slate-200/80 shadow-xl overflow-hidden flex flex-col relative">
                     <div className="absolute top-4 left-3 z-20 w-8 h-8 bg-amber-400 text-slate-900 border-2 border-white font-black rounded-full flex items-center justify-center shadow text-xs">
                       {originalIndex + 1}
                     </div>
 
-                    <CardImageSlider images={spot.images} />
+                    {isCardNearActive ? (
+                      <CardImageSlider images={spot.images} />
+                    ) : (
+                      <div className="w-full aspect-[16/11] bg-slate-100 animate-pulse flex items-center justify-center text-slate-300">
+                        <svg className="w-8 h-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                      </div>
+                    )}
 
                     <div className="p-4 md:p-5 flex flex-col justify-between bg-white">
                       <div className="space-y-1.5 md:space-y-2">
@@ -340,7 +352,6 @@ export default function StoryMapSidecar() {
                         </p>
                       </div>
 
-                      {/* Bagian Tombol Aksi */}
                       <div className="pt-4 mt-4 border-t border-slate-100 flex gap-2">
                         <a
                           href={spot.gmapsUrl}
@@ -358,7 +369,6 @@ export default function StoryMapSidecar() {
             })
           )}
 
-          {/* Spacer Bawah Internal Desktop */}
           <div className="hidden md:block h-[10vh] flex-shrink-0 pointer-events-none" />
         </div>
       </div>

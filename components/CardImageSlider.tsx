@@ -8,9 +8,8 @@ interface CardImageSliderProps {
 export default function CardImageSlider({ images }: CardImageSliderProps) {
   const [imgIndex, setImgIndex] = useState(0);
   
-  // State untuk menyimpan batas maksimum index gambar yang dirender/download 
-  // Nilai 2 berarti merender index 0, 1, dan 2 (3 foto pertama).
-  const [maxLoaded, setMaxLoaded] = useState(2); 
+  // --- LOGIKA BARU: Limit awal foto yang di-load adalah 3 ---
+  const [loadedLimit, setLoadedLimit] = useState(3);
 
   if (!images || images.length === 0) {
     return (
@@ -23,42 +22,40 @@ export default function CardImageSlider({ images }: CardImageSliderProps) {
   const nextSlide = (e: React.MouseEvent) => {
     e.stopPropagation();
     setImgIndex((prev) => {
-      const nextIndex = prev === images.length - 1 ? 0 : prev + 1;
+      const next = prev === images.length - 1 ? 0 : prev + 1;
       
-      // Update sliding window batas gambar: 
-      // Saat digeser ke foto 2 (index 1), maka foto 4 (index 3) akan terender & otomatis terdownload.
-      setMaxLoaded((prevMax) => Math.min(images.length - 1, Math.max(prevMax, nextIndex + 2)));
-      
-      return nextIndex;
+      // --- LOGIKA BARU: Naikkan limit jika mendekati ujung preloader ---
+      // Jika geser ke indeks 1 (foto 2), pastikan foto 4 (indeks 3) terload
+      if (next + 2 >= loadedLimit) {
+        setLoadedLimit(Math.min(images.length, next + 3)); // +3 karena batas slice exclusive
+      }
+      return next;
     });
   };
 
   return (
     <div className="relative w-full aspect-[16/11] bg-slate-100 overflow-hidden group/slider">
       
-      {/* Merender tag image yang diizinkan oleh state maxLoaded */}
-      {images.map((imgSrc, idx) => {
-        // Jangan render/download gambar yang melebihi batas "window" saat ini
-        if (idx > maxLoaded) return null;
+      {/* Gambar Aktif yang Terlihat */}
+      <img
+        src={images[imgIndex]}
+        alt="Dokumentasi Spot"
+        className="w-full h-full object-cover select-none pointer-events-none"
+      />
 
-        return (
-          <img
-            key={idx}
-            src={imgSrc}
-            alt={`Dokumentasi Spot ${idx + 1}`}
-            className={`absolute inset-0 w-full h-full object-cover select-none pointer-events-none transition-opacity duration-500 ${
-              imgIndex === idx ? "opacity-100 z-10" : "opacity-0 z-0"
-            }`}
-          />
-        );
-      })}
+      {/* --- LOGIKA BARU: Preloader Tersembunyi (Hidden) --- */}
+      {/* Gambar ini dirender di background agar browser mendownload & meletakannya di cache */}
+      <div className="hidden">
+        {images.slice(0, loadedLimit).map((src, idx) => (
+          <img key={idx} src={src} alt="preload" loading="eager" />
+        ))}
+      </div>
 
       {/* Tombol Panah Kanan Melayang (Hanya muncul jika gambar > 1) */}
       {images.length > 1 && (
         <button
           onClick={nextSlide}
-          // z-20 agar posisi tombol selalu di atas gambar yang dirender secara bertumpuk
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm border border-slate-200/50 shadow flex items-center justify-center text-slate-700 hover:bg-white active:scale-90 transition-all opacity-0 group-hover/slider:opacity-100"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm border border-slate-200/50 shadow flex items-center justify-center text-slate-700 hover:bg-white active:scale-90 transition-all opacity-0 group-hover/slider:opacity-100"
           aria-label="Next image"
         >
           <svg
@@ -80,7 +77,7 @@ export default function CardImageSlider({ images }: CardImageSliderProps) {
 
       {/* Indikator Titik Bulat Putih Melayang di Bawah Tengah Gambar */}
       {images.length > 1 && (
-        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-20 flex gap-1.5 bg-black/30 backdrop-blur-[2px] px-2.5 py-1 rounded-full">
+        <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5 bg-black/30 backdrop-blur-[2px] px-2.5 py-1 rounded-full">
           {images.map((_, idx) => (
             <div
               key={idx}
