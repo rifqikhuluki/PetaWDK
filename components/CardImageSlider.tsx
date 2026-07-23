@@ -55,7 +55,7 @@ export default function CardImageSlider({ images }: CardImageSliderProps) {
       {images.length > 1 && (
         <button
           onClick={nextSlide}
-          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm border border-slate-200/50 shadow flex items-center justify-center text-slate-700 hover:bg-white active:scale-90 transition-all opacity-0 group-hover/slider:opacity-100"
+          className="absolute right-3 top-1/2 -translate-y-1/2 z-10 w-8 h-8 rounded-full bg-white/80 backdrop-blur-sm border border-slate-200/50 shadow flex items-center justify-center text-slate-700 hover:bg-white active:scale-90 transition-all opacity-100 md:opacity-0 md:group-hover/slider:opacity-100"
           aria-label="Next image"
         >
           <svg
