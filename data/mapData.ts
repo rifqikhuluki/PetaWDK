@@ -53,30 +53,30 @@ export const spotsData: Spot[] = [
   //   name: "Loket",
   //   description:
   //     "Pusat pembelian tiket masuk resmi, penukaran reservasi, dan tempat mendapatkan informasi awal wisata.",
-  //   coordinates: [-7.795683933460461, 112.52232036076474],
-  //   gmapsUrl: "https://maps.app.goo.gl/1AcYub1Ui7YyY2x88",
+  //   coordinates: [-7.7956540, 112.5221936],
+  //   gmapsUrl: "https://maps.app.goo.gl/qxjyzvgEYNtXiLkEA?g_st=ipc",
   //   category: "fasilitas",
   //   zoom: 21,
-  //   images: ["/wahana/crispa.webp"],
+  //   images: ["/fasilitas/loket.webp"],
   // },
   // {
   //   id: "5",
   //   name: "Wisata Jeep",
   //   description:
   //     "Layanan penyewaan dan titik keberangkatan armada Jeep untuk menikmati petualangan seru menyusuri rute wisata.",
-  //   coordinates: [-7.795707608382016, 112.52212799985682],
-  //   gmapsUrl: "https://maps.app.goo.gl/VcyC4qCT8GqUUdQc6",
+  //   coordinates: [-7.7957430, 112.5221379],
+  //   gmapsUrl: "https://maps.app.goo.gl/8SUUHrveUATRLu3A7?g_st=ipc",
   //   category: "fasilitas",
   //   zoom: 21,
-  //   images: ["/wahana/crispa.webp"],
+  //   images: ["/fasilitas/wisataJeep.webp"],
   // },
   // {
   //   id: "6",
   //   name: "Playground",
   //   description:
   //     "Area bermain luar ruangan yang ramah anak, dilengkapi dengan aneka wahana permainan yang aman dan seru.",
-  //   coordinates: [-7.795707608382016, 112.52212799985689], //null
-  //   gmapsUrl: "https://maps.app.goo.gl/17xHYVzrvfMnExsV7",
+  //   coordinates: [-7.7958868, 112.5223384], //null
+  //   gmapsUrl: "https://maps.app.goo.gl/sTbLN3FD6wN4QSxV6?g_st=ipc",
   //   category: "fasilitas",
   //   zoom: 21,
   //   images: ["/fasilitas/playground.webp"],
@@ -152,22 +152,22 @@ export const spotsData: Spot[] = [
   //   name: "Parkir Guest House",
   //   description:
   //     "Area parkir kendaraan khusus yang disediakan dekat dengan lokasi penginapan demi kenyamanan tamu bermalam.",
-  //   coordinates: [-7.79633598744321, 112.52195497459879], //null
-  //   gmapsUrl: "https://maps.app.goo.gl/73xJbp9rfA9VpYYy5",
+  //   coordinates: [-7.7956955, 112.5214292], //null
+  //   gmapsUrl: "https://maps.app.goo.gl/c2fxsUA5L7uDnNot5?g_st=ipc",
   //   category: "fasilitas",
   //   zoom: 21,
-  //   images: ["/wahana/crispa.webp"],
+  //   images: ["/fasilitas/parkiranGuestHouse.webp", "/fasilitas/parkiranGuestHouse1.webp"]
   // },
   // {
   //   id: "14",
-  //   name: "Jajan Foto",
+  //   name: "Jajanan Foto",
   //   description:
   //     "Kawasan berburu kuliner ringan yang dilengkapi dengan berbagai dekorasi estetik untuk latar belakang berfoto.",
   //   coordinates: [-7.79633598744321, 112.52195497459873],
   //   gmapsUrl: "https://maps.app.goo.gl/XhjKX1VHWVrxbtVq7",
   //   category: "fasilitas",
   //   zoom: 21,
-  //   images: ["/wahana/crispa.webp"],
+  //   images: ["/fasilitas/jajananFoto.webp", "/fasilitas/jajananFoto1.webp"]
   // },
   // {
   //   id: "15",
